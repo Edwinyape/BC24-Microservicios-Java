@@ -1,10 +1,14 @@
 server:
-  port: ${PORT:${SERVER_PORT:0}}
+  port: 8002
+  
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/Proyecto01BD  
+  
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      default-zone: http://localhost:8761/eureka
-  instance:
-    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+      default-zone: http://localhost:8082/eureka/
